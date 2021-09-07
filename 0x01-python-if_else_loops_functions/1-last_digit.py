@@ -3,7 +3,7 @@ import random
 from typing import AbstractSet
 number = random.randint(-10000, 10000)
 if number < 0:
-    x =  -10
+    x = -10
 else:
     x = 10
 if number % x > 5:
