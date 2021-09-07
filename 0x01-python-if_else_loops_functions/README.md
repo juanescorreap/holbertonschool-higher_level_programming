@@ -1,4 +1,4 @@
-0x01. Python - if/else, loops, functions
+# 0x01. Python - if/else, loops, functions
 
 Project developed by Juan Esteban Correa Pérez as part of the foundations program at Holberton School.
 
