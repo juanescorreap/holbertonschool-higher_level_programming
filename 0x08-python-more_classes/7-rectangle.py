@@ -3,9 +3,6 @@
 """Class that defines a rectangle"""
 
 
-from typing import Any
-
-
 class Rectangle:
     """Class that defines a rectangle"""
     number_of_instances = 0
