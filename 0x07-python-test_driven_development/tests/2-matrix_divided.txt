@@ -1,0 +1,21 @@
+======================
+0. Divide matrix module
+======================
+Function
+========
+Function that divides all elements of a matrix (matrix) by an integer (div).
+
+Import module:
+======================
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+======================
+Should return a matrix with the result of the division of the number in the index by div:
+	>>> matrix = [[1, 2, 3],[4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Should rise a TypeError
+	>>> matrix = [[-1, 2, 3],[4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
