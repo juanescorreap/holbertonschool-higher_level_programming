@@ -102,4 +102,3 @@ Should raise a TypeError:
 	Should print first and last name
 	>>> say_my_name(str(['J', 'o', 'h', 'n']), "Smith")
 	My name is ['J', 'o', 'h', 'n'] Smith
-
