@@ -1,0 +1,149 @@
+======================
+4. print square module
+======================
+Function
+========
+Function that prints a square with the character "#".
+
+Import module:
+======================
+
+    >>> print_square = __import__('4-print_square').print_square
+
+======================
+Should print first and last name
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+Should print first and last name
+	>>> print_square('a')
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Should print first and last name
+	>>> print_square(5 + 6)
+	###########
+	###########
+	###########
+	###########
+	###########
+	###########
+	###########
+	###########
+	###########
+	###########
+	###########
+
+Should print first and last name
+	>>> print_square(0xd)
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+	#############
+
+	Should print first and last name
+	>>> print_square(-0)
+
+Should print first and last name
+	>>> print_square(-4)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+Should print first and last name
+	>>> print_square(0)
+
+Should print first and last name
+	>>> print_square(-0xd)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+Should print first and last name
+	>>> print_square(int('0111', 2))
+	#######
+	#######
+	#######
+	#######
+	#######
+	#######
+	#######
+
+Should print first and last name
+	>>> print_square(int('inf'))
+	Traceback (most recent call last):
+	...
+	ValueError: invalid literal for int() with base 10: 'inf'
+
+Should print first and last name
+	>>> print_square(int('inf'))
+	Traceback (most recent call last):
+	...
+	ValueError: invalid literal for int() with base 10: 'inf'
+
+Should print first and last name
+	>>> print_square(float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Should print first and last name
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() missing 1 required positional argument: 'size'
+
+Should print first and last name
+	>>> print_square(DOS)
+	Traceback (most recent call last):
+	...
+	NameError: name 'DOS' is not defined
+
+Should print first and last name
+	>>> print_square('DOS')
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Should print first and last name
+	>>> print_square(int('a'))
+	Traceback (most recent call last):
+	...
+	ValueError: invalid literal for int() with base 10: 'a'
+
+Should print first and last name
+	>>> print_square(int('a') + int('b'))
+	Traceback (most recent call last):
+	...
+	ValueError: invalid literal for int() with base 10: 'a'
+
+Should print first and last name
+	>>> print_square(True)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Should print first and last name
+	>>> print_square(None)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Should print first and last name
+	>>> print_square(1, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() takes 1 positional argument but 2 were given

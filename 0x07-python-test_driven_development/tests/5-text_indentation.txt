@@ -1,0 +1,163 @@
+======================
+5.Text indentation module
+======================
+Function
+========
+Function that adds 2 new lines after each of these characters: ., ? and :
+
+Import module:
+======================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+======================
+Should print the whole text adding 2 new lines after '.'
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit:""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+    <BLANKLINE>
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""""")
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(""" """)
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""456""")
+    456
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("hola")
+    hola
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation('hola')
+    hola
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation('''hola''')
+    hola
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation('''hola?''')
+    hola?
+    <BLANKLINE>
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(""": . ?""")
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(str(5))
+    5
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(False)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(["hola", "como", "esta"])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation((1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""hola""", """como""", """"esta""")
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""hola""", """como""")
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""hola""" """como""")
+    holacomo
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(1, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation("""\\n""")
+    \n
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(text_indentation("""hola"""))
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(int('inf'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(int('inf'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+Should print the whole text adding 2 new lines after ':'
+    >>> text_indentation(""".?:""")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+
