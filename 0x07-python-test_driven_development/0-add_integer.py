@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""
+Function that takes two integers or floats
+as arguments and returns the addition
+"""
+
+
 def add_integer(a, b=98):
+    """Function that takes two integers or floats
+    as arguments and returns the addition"""
+
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
     if type(b) is not int and type(b) is not float:

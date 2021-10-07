@@ -159,5 +159,3 @@ Should print the whole text adding 2 new lines after ':'
     <BLANKLINE>
     :
     <BLANKLINE>
-
-

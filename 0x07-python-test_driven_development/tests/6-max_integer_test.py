@@ -4,7 +4,8 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
-class test_max_integer(unittest.TestCase):
+
+class Test_max_integer(unittest.TestCase):
     def test_base_case(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
@@ -42,7 +43,7 @@ class test_max_integer(unittest.TestCase):
         self.assertEqual(max_integer([-1]), -1)
 
     def test_addition(self):
-        self.assertEqual(max_integer([5 + 5, 3 *2, 6 ** 3]), 216)
+        self.assertEqual(max_integer([5 + 5, 3 * 2, 6 ** 3]), 216)
 
     def test_boolean(self):
         self.assertEqual(max_integer([True, False]), True)
@@ -68,5 +69,3 @@ class test_max_integer(unittest.TestCase):
 
     def test_hexadecimal(self):
         self.assertEqual(max_integer([0x09, 0x51, 0x08]), 0x51)
-
-    
