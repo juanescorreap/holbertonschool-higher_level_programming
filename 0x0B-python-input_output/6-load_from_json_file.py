@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-function that creates an
+Function that creates an
 Object from a “JSON file”
 """
 import json
