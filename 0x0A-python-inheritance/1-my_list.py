@@ -3,7 +3,7 @@
 """Class that defines MyList"""
 
 
-class MyList (list):
+class MyList(list):
     """Class that defines MyList"""
     def print_sorted(self):
         print(sorted(self))
