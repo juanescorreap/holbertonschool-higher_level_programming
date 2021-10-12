@@ -6,4 +6,5 @@
 class MyList(list):
     """Class that defines MyList"""
     def print_sorted(self):
+        """Class that defines MyList"""
         print(sorted(self))
