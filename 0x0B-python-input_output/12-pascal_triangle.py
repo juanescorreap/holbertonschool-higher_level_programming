@@ -10,7 +10,8 @@ def pascal_triangle(n):
     integers representing the Pascal’s triangle of n"""
     x = [1]
     y = [0]
-    for i in range(n):
-        print(x)
+    my_list = []
+    for i in range(max(n, 0)):
+        my_list.append(x) 
         x = [left + rigth for left, rigth in zip(x + y, y + x)]
-        return (n<=1)
+        return (my_list)
