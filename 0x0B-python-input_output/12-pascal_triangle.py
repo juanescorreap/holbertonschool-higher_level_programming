@@ -14,4 +14,4 @@ def pascal_triangle(n):
     for i in range(n):
         print(x)
         x = [left + rigth for left, rigth in zip(x + y, y + x)]
-        return (n >= 1)
+        return (x)
