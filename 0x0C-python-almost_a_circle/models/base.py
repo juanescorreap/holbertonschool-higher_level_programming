@@ -36,6 +36,7 @@ class Base:
                 for i in range(len(list_objs)):
                     my_list.append(cls.to_dictionary(list_objs[i]))
                 my_file.write(cls.to_json_string(my_list))
+
     @staticmethod
     def from_json_string(json_string):
         my_list = []
@@ -46,4 +47,19 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        
+        new_instance = cls(5, 5)
+        new_instance.update(dictionary)
+        return(new_instance)
+
+    @classmethod
+    def load_from_file(cls):
+        my_list = []
+        filename = str(cls.__name__+".json")
+        with open(filename, encoding="utf-8") as my_file:
+          lines = my_file.read()
+          dictionay = cls.from_json_string(lines)
+          for i in dictionay:
+              my_list.append(cls.create(**i))
+        return(my_list)
+
+
