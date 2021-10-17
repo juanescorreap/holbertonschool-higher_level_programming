@@ -48,5 +48,3 @@ class Square (Rectangle):
 
     def to_dictionary(self):
         return(self.__dict__)
-
-

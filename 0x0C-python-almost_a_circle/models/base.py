@@ -3,7 +3,6 @@
 """Class that defines Base"""
 
 import json
-from os import write
 
 
 class Base:
@@ -56,10 +55,8 @@ class Base:
         my_list = []
         filename = str(cls.__name__+".json")
         with open(filename, encoding="utf-8") as my_file:
-          lines = my_file.read()
-          dictionay = cls.from_json_string(lines)
-          for i in dictionay:
-              my_list.append(cls.create(**i))
+            lines = my_file.read()
+            dictionay = cls.from_json_string(lines)
+            for i in dictionay:
+                my_list.append(cls.create(**i))
         return(my_list)
-
-
