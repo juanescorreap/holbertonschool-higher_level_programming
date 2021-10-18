@@ -29,19 +29,7 @@ class Square (Rectangle):
 
     def update(self, *args, **kwargs):
         """Method to up date a square"""
-        if args is None:
-            for key, value in kwargs.items():
-                if key == "size":
-                    self.width = value
-                if key == "size":
-                    self.height = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
-                if key == "id":
-                    self.id = value
-        else:
+        if args is not None and len(args) > 0:
             for i in range(len(args)):
                 if i == 1:
                     self.width = args[1]
@@ -53,6 +41,18 @@ class Square (Rectangle):
                     self.y = args[3]
                 if i == 0:
                     self.id = args[0]
+        else:
+            for key, value in kwargs.items():
+                if key == "size":
+                     setattr(self, key, value)
+                if key == "size":
+                     setattr(self, key, value)
+                if key == "x":
+                     setattr(self, key, value)
+                if key == "y":
+                    setattr(self, key, value)
+                if key == "id":
+                     setattr(self, key, value)
 
     def to_dictionary(self):
         """Method to return the dictionary"""
