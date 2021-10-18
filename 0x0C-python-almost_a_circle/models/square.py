@@ -44,15 +44,15 @@ class Square (Rectangle):
         else:
             for key, value in kwargs.items():
                 if key == "size":
-                     setattr(self, key, value)
+                    setattr(self, key, value)
                 if key == "size":
-                     setattr(self, key, value)
+                    setattr(self, key, value)
                 if key == "x":
-                     setattr(self, key, value)
+                    setattr(self, key, value)
                 if key == "y":
                     setattr(self, key, value)
                 if key == "id":
-                     setattr(self, key, value)
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """Method to return the dictionary"""
