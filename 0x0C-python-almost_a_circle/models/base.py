@@ -3,6 +3,7 @@
 """Class that defines Base"""
 
 import json
+import os
 
 
 class Base:
@@ -58,10 +59,10 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances"""
         my_list = []
-        filename = str(cls.__name__+".json")
-        with open(filename, encoding="utf-8") as my_file:
-            lines = my_file.read()
-            dictionay = cls.from_json_string(lines)
-            for i in dictionay:
-                my_list.append(cls.create(**i))
+        filename = str(cls.__name__)+".json"
+        if os.path.exists(filename):
+            with open(filename, encoding="utf-8") as my_file:
+                dictionay = cls.from_json_string(my_file.read())
+                for i in dictionay:
+                    my_list.append(cls.create(**i))
         return(my_list)
