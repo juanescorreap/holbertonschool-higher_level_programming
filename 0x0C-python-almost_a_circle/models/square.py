@@ -43,16 +43,16 @@ class Square (Rectangle):
                     self.id = value
         else:
             for i in range(len(args)):
-                if i == 2:
-                    self.width = args[2]
-                if i == 2:
-                    self.height = args[2]
-                if i == 3:
-                    self.x = args[3]
-                if i == 4:
-                    self.y = args[4]
                 if i == 1:
-                    self.id = args[1]
+                    self.width = args[1]
+                if i == 1:
+                    self.height = args[1]
+                if i == 2:
+                    self.x = args[2]
+                if i == 3:
+                    self.y = args[3]
+                if i == 0:
+                    self.id = args[0]
 
     def to_dictionary(self):
         """Method to return the dictionary"""
