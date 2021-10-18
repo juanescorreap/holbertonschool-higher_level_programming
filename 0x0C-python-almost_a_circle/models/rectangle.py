@@ -91,35 +91,20 @@ class Rectangle (Base):
                                                 self.id, self.x, self.y,
                                                 self.width, self.height))
 
-    def update(self, *args):
-        """Method to up date a Rectangle"""
-        for i in range(len(args)):
-            if i == 2:
-                self.width = args[2]
-            if i == 3:
-                self.height = args[3]
-            if i == 4:
-                self.x = args[4]
-            if i == 5:
-                self.y = args[5]
-            if i == 1:
-                super().__init__(args[1])
-
     def update(self, *args, **kwargs):
         """Method to up date a Rectangle"""
         if args is not None and len(args) > 0:
             for i in range(len(args)):
-                if i == 2:
-                    self.width = args[2]
-                if i == 3:
-                    self.height = args[3]
-                if i == 4:
-                    self.x = args[4]
-                if i == 5:
-                    self.y = args[5]
                 if i == 1:
-                    self.id = args[1]
-                print("->{}".format(args[i]))
+                    self.width = args[1]
+                if i == 2:
+                    self.height = args[2]
+                if i == 3:
+                    self.x = args[3]
+                if i == 4:
+                    self.y = args[4]
+                if i == 0:
+                    self.id = args[0]
         else:
             for key, value in kwargs.items():
                 if key == "width":
