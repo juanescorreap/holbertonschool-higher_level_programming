@@ -6,9 +6,11 @@ import json
 
 
 class Base:
+    """Class that defines Base"""
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """constructor for the Base class"""
         if id is not None:
             self.id = id
         else:
@@ -17,6 +19,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None or bool(list_dictionaries) is False:
             my_list = []
             return(my_list)
@@ -25,6 +28,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file:"""
         filename = str(cls.__name__+".json")
         my_list = []
         if list_objs is None:
@@ -38,6 +42,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
         my_list = []
         if json_string is None or bool(json_string) is False:
             return(my_list)
@@ -46,12 +51,17 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        new_instance = cls(5, 5)
-        new_instance.update(dictionary)
+        """returns an instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            new_instance = cls(5, 5)
+        else:
+            new_instance = cls(5)
+        new_instance.update(**dictionary)
         return(new_instance)
 
     @classmethod
     def load_from_file(cls):
+        """returns a list of instances"""
         my_list = []
         filename = str(cls.__name__+".json")
         with open(filename, encoding="utf-8") as my_file:
