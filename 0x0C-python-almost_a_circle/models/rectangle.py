@@ -6,6 +6,7 @@ from models.base import Base
 
 class Rectangle (Base):
     """Class that defines Base"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """constructor for the Rectangle class"""
         self.width = width
@@ -122,7 +123,7 @@ class Rectangle (Base):
         """Method to return the dictionary"""
         new_dict = {}
         for key, value in self.__dict__.items():
-            if key [:12] == "_Rectangle__":
+            if key[:12] == "_Rectangle__":
                 new_dict[key[12:]] = value
             else:
                 new_dict[key] = value
