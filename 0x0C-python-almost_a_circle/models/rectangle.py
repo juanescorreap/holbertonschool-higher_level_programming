@@ -121,7 +121,7 @@ class Rectangle (Base):
     def to_dictionary(self):
         """Method to return the dictionary"""
         new_dict = {}
-        for key, value in self.__dict__.items:
+        for key, value in self.__dict__.items():
             if key [:12] == "_Rectangle__":
                 new_dict[key[12:]] = value
             else:
