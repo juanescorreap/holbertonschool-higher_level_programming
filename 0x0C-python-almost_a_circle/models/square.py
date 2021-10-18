@@ -62,6 +62,6 @@ class Square (Rectangle):
                 new_dict[key[12:]] = value
             else:
                 new_dict[key] = value
-        new_dict["size"] = new_dict ["width"]
+        new_dict["size"] = new_dict["width"]
         del new_dict["width"], new_dict["height"]
         return(new_dict)
