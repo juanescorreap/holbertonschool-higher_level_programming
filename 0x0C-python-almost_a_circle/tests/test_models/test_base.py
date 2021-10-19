@@ -6,6 +6,7 @@ import unittest
 from models.rectangle import Rectangle
 from models.base import Base
 from models.square import Square
+import io
 
 
 class TestBaseClass(unittest.TestCase):
@@ -750,6 +751,260 @@ class TestBaseClass(unittest.TestCase):
         new_obj = Square(8, 5, 3, 26)
         new_obj.x = 40
         self.assertEqual(new_obj.x, 40)
+
+    def test_args_valid_types_str(self):
+        """Check valid types, str"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = "string"
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_valid_types_list(self):
+        """Check valid types, list"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = [32, 43]
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_valid_types_set(self):
+        """Check valid types, set"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = {32, 43}
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_valid_types_tuple(self):
+        """Check valid types, tuple"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = (32, 43)
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_valid_types_dict(self):
+        """Check valid types, dict"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = {"Hi": 43}
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_valid_types_float(self):
+        """Check valid types, float"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = 3.14
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_valid_types_none(self):
+        """Check valid types, dict"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = None
+        msg = " must be an integer"
+        err = TypeError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_args_value_zero(self):
+        """Check valid value"""
+        Base.reset_nb_instances
+        r1 = Rectangle(10, 10, 10, 10)
+        s = 0
+        msg = " must be > 0"
+        err = ValueError
+        try:
+            r1.update(21, s)
+        except err as e:
+            self.assertEqual((str(e)), "width" + msg)
+        try:
+            r1.update(21, 32, s)
+        except err as e:
+            self.assertEqual((str(e)), "height" + msg)
+        s = -1
+        msg = " must be >= 0"
+        try:
+            r1.update(21, 32, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "x" + msg)
+        try:
+            r1.update(21, 32, 43, 43, s)
+        except err as e:
+            self.assertEqual((str(e)), "y" + msg)
+
+    def test_init_0(self):
+        """Test init of Rectangle"""
+        s1 = Square(5)
+        st = "[Square] (1) 0/0 - 5"
+        self.assertEqual(str(s1), st)
+
+    def test_init_1(self):
+        """Test init of Rectangle"""
+        s1 = Square(5, 5)
+        st = "[Square] (1) 5/0 - 5"
+        self.assertEqual(str(s1), st)
+
+    def test_attr_0(self):
+        """Test attr of Rectangle"""
+        s1 = Square(5)
+        self.assertEqual([s1.width, s1.height], [5, 5])
+
+    def test_attr_1(self):
+        """Test attr of Rectangle, size should not created"""
+        s1 = Square(2)
+        with self.assertRaises(AttributeError):
+            print(s1._Square__size)
+
+    def test_attr_str(self):
+        """Test attr of Square, size should not created"""
+        with self.assertRaises(TypeError):
+            Square("1")
+
+        with self.assertRaises(TypeError):
+            Square(1, "1")
+
+        with self.assertRaises(TypeError):
+            Square(1, 2, "1")
+
+    def test_inheritence(self):
+        """Tests if Square is child of Rectangle"""
+        self.assertTrue(issubclass(Square, Rectangle))
+
+    def test_exceptions(self):
+        """Test exceptions"""
+        with self.assertRaises(TypeError):
+            s1 = Square(10, 2, 1, 32, 233232)
+
+        with self.assertRaises(TypeError):
+            s1 = Square()
+
+    def test_attr_valuerr(self):
+        """Test attr of Square"""
+        with self.assertRaises(ValueError):
+            Square(-1)
+
+        with self.assertRaises(ValueError):
+            Square(1, -1)
+
+        with self.assertRaises(ValueError):
+            Square(1, 2, -1)
+
+        with self.assertRaises(ValueError):
+            Square(0)
 
 
 if __name__ == '__main__':
