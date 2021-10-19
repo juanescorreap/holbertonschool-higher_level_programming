@@ -3,7 +3,9 @@
 """Class that defines Base"""
 
 import json
+import csv
 import os
+from models.rectangle import Rectangle
 
 
 class Base:
@@ -66,3 +68,7 @@ class Base:
                 for i in dictionay:
                     my_list.append(cls.create(**i))
         return(my_list)
+
+    def reset_nb_instances():
+        """resets the numeber of instances (created for testing)"""
+        Base.__nb_objects = 0
