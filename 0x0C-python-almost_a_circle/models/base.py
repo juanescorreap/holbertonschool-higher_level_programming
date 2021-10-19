@@ -3,9 +3,8 @@
 """Class that defines Base"""
 
 import json
-import csv
 import os
-from models.rectangle import Rectangle
+
 
 
 class Base:
