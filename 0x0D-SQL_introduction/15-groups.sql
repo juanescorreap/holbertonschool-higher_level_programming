@@ -2,5 +2,5 @@
 SELECT score
 COUNT(DISTINCT score)
 AS number
-FROM first_table
+FROM second_table
 GROUP BY score;
