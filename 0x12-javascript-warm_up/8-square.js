@@ -9,4 +9,6 @@ if (size) {
     }
     console.log(myArray.join(''));
   }
+} else {
+  console.log('Missing size');
 }
