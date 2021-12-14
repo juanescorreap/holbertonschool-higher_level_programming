@@ -2,12 +2,11 @@
 // script that searches the second biggest integer in the list of arguments
 if (process.argv.length === 2) {
   console.log('0');
-  return;
 }
 if (process.argv.length === 3) {
   console.log('1');
-  return;
-} else {
+}
+if (process.argv.length > 3) {
   const myArray = [];
   let i = 2;
   while (process.argv[i]) {
