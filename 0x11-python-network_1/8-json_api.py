@@ -1,22 +1,21 @@
 #!/usr/bin/python3
-"""take URL, send a POST request to the passed URL
-	with the email, and displays the body of the response
-"""
+"""Python script that takes in a letter and sends a POST request
+to http://0.0.0.0:5000/search_user with the letter as a parameter."""
 import requests
-from sys import argv
+import sys
 
 if __name__ == "__main__":
-	if len(argv) < 2:
+	if len(sys.argv) < 2:
 		value = {'q': ""}
 	else:
-		value = {'q': argv[1]}
+		value = {'q': sys.argv[1]}
 	try:
-		url = 'http://0.0.0.0:5000/search_user'
-		response = requests.post(url, value)
-		json = response.json()
-		if len(json) == 0:
+		r = requests.post('http://0.0.0.0:5000/search_user', value)
+		answer = r.json()
+		if len(answer) == 0:
 			print("No result")
 		else:
-			print("[{}] {}".format(json["id"], json["name"]))
+			print("[{}] {}".format(answer["id"], answer["name"]))
 	except:
 		print("Not a valid JSON")
+    
