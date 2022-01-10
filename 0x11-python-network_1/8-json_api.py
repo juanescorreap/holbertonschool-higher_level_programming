@@ -3,16 +3,17 @@
 to http://0.0.0.0:5000/search_user with the letter as a parameter."""
 
 
+import requests
+import sys
+
 if __name__ == "__main__":
-    import requests
-    import sys
     if len(sys.argv) < 2:
         value = ""
     else:
         value = sys.argv[1]
-    data = {'q': value}
 
-    r = requests.post('http://0.0.0.0:5000/search_user', data)
+    r = requests.post('http://0.0.0.0:5000/search_user',
+                      data={'q': value})
     try:
         answer = r.jason()
         if len(answer) == 0:
