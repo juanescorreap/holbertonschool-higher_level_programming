@@ -10,9 +10,9 @@ if __name__ == "__main__":
         value = ""
     else:
         value = sys.argv[1]
+    data = {'q': value}
 
-    r = requests.post('http://0.0.0.0:5000/search_user',
-                      data={'q': value})
+    r = requests.post('http://0.0.0.0:5000/search_user', data)
     try:
         answer = r.jason()
         if len(answer) == 0:
