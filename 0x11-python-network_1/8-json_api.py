@@ -6,11 +6,11 @@ import sys
 
 if __name__ == "__main__":
 	if len(sys.argv) < 2:
-		value = {'q': ""}
+		value = ""
 	else:
-		value = {'q': sys.argv[1]}
+		value = sys.argv[1]
 
-	r = requests.post('http://0.0.0.0:5000/search_user', data=value)
+	r = requests.post('http://0.0.0.0:5000/search_user', data = {'q': value})
 	try:
 		answer = r.json()
 		if len(answer) == 0:
