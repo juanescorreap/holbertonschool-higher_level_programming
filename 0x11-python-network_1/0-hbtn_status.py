@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """Python script that fetches https://intranet.hbtn.io/status"""
 
-import urllib.request
-if __name__ == "__main__":
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        status = response.read()
+from urllib.request import urlopen
 
+actions = [
+        ("type", lambda html: type(html)),
+        ("content", lambda html: html),
+        ("utf8 content", lambda html: html.decode()),
+]
+
+with urlopen('https://intranet.hbtn.io/status') as response:
+    html = response.read()
     print("Body response:")
-    print("\t- type: {}".format(type(status)))
-    print("\t- content: {}".format(status))
-    print("\t- utf8 content: {}".format(status.decode()))
+    [print("\t- {}: {}".format(header, fun(html))) for header, fun in actions]
