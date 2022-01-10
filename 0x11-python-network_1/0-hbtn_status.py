@@ -7,4 +7,4 @@ if __name__ == "__main__":
         status = response.read()
 
     print(f"Body response: \n\t - type: {type(status)}\n\t - content:\
- {status}\n\t - utf8 content: {status.decode('utf-8')}")
+ {status}\n\t - utf8 content: {status.decode()}")
