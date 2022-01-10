@@ -7,4 +7,4 @@ if __name__ == "__main__":
         status = response.read()
 
     print("Body response:\n\t- type: {}\n\t- content: {}\n\t- utf8 content: {}"
-    .format(type(status), status, status.decode()))
+          .format(type(status), status, status.decode()))
