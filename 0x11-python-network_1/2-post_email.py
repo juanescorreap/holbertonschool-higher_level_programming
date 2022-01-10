@@ -6,11 +6,11 @@ and displays the body of the response (decoded in utf-8)"""
 if __name__ == "__main__":
     import urllib.request
     import sys
-url = sys.argv[1]
-values = {'email': sys.argv[2]}
+    url = sys.argv[1]
+    values = {'email': sys.argv[2]}
 
-data = urllib.parse.urlencode(values)
-data = data.encode("utf-8")
-with urllib.request.urlopen(url, data) as response:
-    the_page = response.read().decode("utf-8")
-print(the_page)
+    data = urllib.parse.urlencode(values)
+    data = data.encode("utf-8")
+    with urllib.request.urlopen(url, data) as response:
+        the_page = response.read().decode("utf-8")
+    print(the_page)
