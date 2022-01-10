@@ -6,9 +6,9 @@ import sys
 
 if __name__ == "__main__":
     req = urllib.request.Request(sys.argv[1])
-try:
-    with urllib.request.urlopen(req) as response:
-        the_page = response.read().decode("utf-8")
-        print(the_page)
-except urllib.error.HTTPError as error:
-    print("Error code: {}".format(error.code))
+    try:
+        with urllib.request.urlopen(req) as response:
+            the_page = response.read().decode("utf-8")
+            print(the_page)
+    except urllib.error.HTTPError as error:
+        print("Error code: {}".format(error.code))
