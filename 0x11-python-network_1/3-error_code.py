@@ -8,7 +8,7 @@ from sys import argv
 if __name__ == "__main__":
     import urllib.request
     import sys
-    req = urllib.request.Request(argv[1])
+    req = urllib.request.Request(sys.argv[1])
 try:
     with urllib.request.urlopen(req) as response:
         the_page = response.read().decode("utf-8")
